@@ -1,0 +1,51 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login page</title>
+    {% include 'shared/_HeaderReferences.html' %}
+</head>
+<body>
+    {% include 'shared/Header.html' %}
+
+    <section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-1">
+					<div class="login-form"><!--login form-->
+						<h2>Login to your account</h2>
+						<form  method="post">
+							{% csrf_token %}
+                            <label for="{{ login_form.user_name.id_for_label }}">{{ login_form.user_name.label }}</label>
+                            {{ login_form.user_name }}
+                            {% for error in login_form.user_name.errors %}
+                                <p style="color: red">{{ error }}</p>
+                            {% endfor %}
+                            <label for="{{ login_form.password.id_for_label }}">{{ login_form.password.label }}</label>
+                            {{ login_form.password }}
+                            {% for error in login_form.password.errors %}
+                                <p style="color: red;">{{ error }}</p>
+                            {% endfor %}
+
+
+							<span>
+								<input type="checkbox" class="checkbox">
+								Keep me signed in
+							</span>
+							<button type="submit" class="btn btn-default">Login</button>
+						</form>
+					</div><!--/login form-->
+				</div>
+
+			</div>
+		</div>
+	</section><!--/form-->
+
+
+    {% include 'shared/Footer.html' %}
+    {% include 'shared/_FooterReferences.html' %}
+</body>
+</html>

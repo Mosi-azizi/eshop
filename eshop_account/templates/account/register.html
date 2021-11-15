@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Register</title>
+    {% include 'shared/_HeaderReferences.html' %}
+</head>
+<body>
+    {% include 'shared/Header.html' %}
+        <section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-1">
+					<div class="login-form"><!--login form-->
+						<h2>Register new account</h2>
+						<form  method="post">
+							{% csrf_token %}
+                            <label for="{{ register_form.user_name.id_for_label}}">{{ register_form.user_name.label }}</label>
+                            {{ register_form.user_name }}
+                            {% for error in register_form.user_name.errors   %}
+                                <p style="color: red">{{ error }}</p>
+                            {% endfor %}
+{#                            <label for="{{ register_form.email.id_for_label }}">{{ register_form.email.label }}</label>#}
+                            {{ register_form.email}}
+                            {% for error in register_form.email.errors  %}
+                                <p style="color: red">{{ error }}</p>
+
+                            {% endfor %}
+
+{#                            <label for="{{ register_form.password.id_for_label }}">{{ register_form.password.label }}</label>#}
+                            {{ register_form.password}}
+                            {% for error in register_form.password.errors %}
+                                <p style="color: red">{{ error }}</p>
+                            {% endfor %}
+{#                            <label for="{{ register_form.re_password.id_for_label }}">{{ register_form.re_password.label }}</label>#}
+                            {{ register_form.re_password }}
+                            {% for error in register_form.re_password.errors %}
+                                <p style="color: red">{{ error }}</p>
+                            {% endfor %}
+
+{#							<span>#}
+{#								<input type="checkbox" class="checkbox">#}
+{#								Keep me signed in#}
+{#							</span>#}
+							<button type="submit" class="btn btn-default">Register</button>
+						</form>
+					</div><!--/login form-->
+				</div>
+
+			</div>
+		</div>
+	</section><!--/form-->
+    {% include 'shared/Footer.html' %}
+    {% include 'shared/_FooterReferences.html' %}
+
+
+</body>
+</html>
