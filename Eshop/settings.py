@@ -88,7 +88,7 @@ DATABASES = {
         'NAME':'eshop_center',
         'USER':'postgres',
         'PASSWORD':'123456',
-        'HOST':'myPostgresDB',
+        'HOST':'192.168.85.17',
         'PORT':'5432',
     }
 }
