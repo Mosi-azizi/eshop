@@ -1,1 +1,1 @@
-    web: gunicorn eshop.wsgi --log-file -
+    web: gunicorn Eshop.wsgi --log-file -
