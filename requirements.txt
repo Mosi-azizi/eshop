@@ -29,7 +29,7 @@ pytz==2020.1
 rcssmin==1.0.6
 requests==2.24.0
 requests-toolbelt==0.9.1
-rjsmin==1.2.0
+rjsmin==1.1.0
 six==1.15.0
 sorl-thumbnail==12.6.3
 soupsieve==2.0.1
